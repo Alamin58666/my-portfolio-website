@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alamin - Full Stack & DevOps Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-color: #1f2937;
+            --light-text: #6b7280;
+            --bg-color: #ffffff;
+            --section-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto 30px;
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--bg-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        
+        /* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+
+    
+                url('https://picsum.photos/1920/1080?random=1');
+   
+   
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    padding: 150px 0 100px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 span {
+    color: #60a5fa;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: #e5e7eb;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.age-display {
+    font-size: 1.2rem;
+    background-color: rgba(37, 99, 235, 0.8);
+    color: white;
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #1e40af;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-outline:hover {
+    background-color: white;
+    color: #2563eb;
+}
+
+        /* About Section */
+        .about {
+            background-color: var(--section-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-placeholder {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category h3 i {
+            color: var(--accent-color);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-name {
+            font-weight: 600;
+        }
+
+        .skill-level {
+            color: var(--light-text);
+        }
+
+        /* Projects Section */
+        .projects {
+            background-color: var(--section-bg);
+        }
+
+        .projects-container {
+            text-align: center;
+            padding: 60px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .projects-container h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .projects-container p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .coming-soon {
+            font-size: 5rem;
+            color: #e5e7eb;
+            margin-bottom: 20px;
+        }
+
+        /* Services Section */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .service-card p {
+            color: var(--light-text);
+        }
+
+        /* Blog Section */
+        .blog {
+            background-color: var(--section-bg);
+        }
+
+        .blog-container {
+            background-color: var(--card-bg);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-post h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .blog-post h4 {
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+            color: var(--text-color);
+        }
+
+        .blog-post p {
+            margin-bottom: 15px;
+            color: var(--light-text);
+        }
+
+        .blog-post ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .blog-post li {
+            margin-bottom: 8px;
+            color: var(--light-text);
+        }
+
+        .blog-post .conclusion {
+            font-style: italic;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Resume Section */
+        .resume-container {
+            background-color: var(--card-bg);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .education-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .education-item p {
+            color: var(--light-text);
+            margin-bottom: 5px;
+        }
+
+        .download-resume {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--section-bg);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e0f2fe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .contact-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: var(--light-text);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #e0f2fe;
+            border-radius: 50%;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #93c5fd;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating elements */
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 25px;
+                right: 20px;
+            }
+
+            .nav-menu {
+                display: none;
+                width: 100%;
+            }
+
+            .nav-menu.active {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Dark mode toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#home" class="logo">Ala<span>min</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Hello, It's <span>Alamin</span></h1>
+            <p class="tagline animate__animated animate__fadeInUp">Computer Science Student | Aspiring Full-Stack & DevOps Engineer</p>
+            <div class="age-display animate__animated animate__fadeIn" id="ageDisplay">
+                <!-- Age will be calculated by JavaScript -->
+            </div>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn animate__animated animate__fadeInLeft">View Projects</a>
+                <a href="#contact" class="btn btn-outline animate__animated animate__fadeInRight">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Full-Stack Developer → DevOps Engineer</h3>
+                    <p>I am a Computer Science student passionate about web development and DevOps. I enjoy building real-world projects and continuously improving my skills.</p>
+                    <p>My goal is to master Full-Stack development first, then transition into a DevOps engineering role. I believe in the power of automation, continuous integration, and infrastructure as code to build scalable and reliable systems.</p>
+                    <p>I approach every problem with a learning mindset, always curious about how things work under the hood. Whether it's debugging a complex issue or designing a new system architecture, I thrive on challenges that push me to grow.</p>
+                    <p>Currently, I'm focused on building my expertise in JavaScript (Node.js & React.js), Docker, AWS, and Linux while exploring the DevOps ecosystem.</p>
+                </div>
+                <div class="about-image fade-in floating-element">
+                    <div class="profile-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">Java (OOP1)</span> <span class="skill-level">Advanced</span></li>
+                        <li><span class="skill-name">C# (OOP2)</span> <span class="skill-level">Advanced</span></li>
+                        <li><span class="skill-name">JavaScript</span> <span class="skill-level">Intermediate</span></li>
+                        <li><span class="skill-name">Node.js</span> <span class="skill-level">Intermediate</span></li>
+                        <li><span class="skill-name">React.js</span> <span class="skill-level">Learning</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">Docker</span> <span class="skill-level">Intermediate</span></li>
+                        <li><span class="skill-name">Git/GitHub</span> <span class="skill-level">Advanced</span></li>
+                        <li><span class="skill-name">AWS (EC2, S3, IAM, VPC)</span> <span class="skill-level">Intermediate</span></li>
+                        <li><span class="skill-name">Terraform (Basics)</span> <span class="skill-level">Learning</span></li>
+                        <li><span class="skill-name">Linux (Ubuntu)</span> <span class="skill-level">Intermediate</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-database"></i> Databases</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">MySQL</span> <span class="skill-level">Intermediate</span></li>
+                        <li><span class="skill-name">MongoDB</span> <span class="skill-level">Learning</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-container fade-in">
+                <div class="coming-soon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Projects Coming Soon</h3>
+                <p>I'm currently working on exciting projects that showcase my skills in Full-Stack development and DevOps. Check back soon to see my work!</p>
+                <p>Meanwhile, you can check my GitHub profile for smaller projects and code examples.</p>
+                <a href="#" class="btn" id="githubLink">Visit My GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-container">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Website Development</h3>
+                    <p>Building responsive, modern websites with HTML, CSS, JavaScript, and popular frameworks.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Frontend Design</h3>
+                    <p>Creating beautiful, user-friendly interfaces with attention to detail and user experience.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend API Development</h3>
+                    <p>Developing robust RESTful APIs and server-side logic with Node.js and databases.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Bug Fixing & Optimization</h3>
+                    <p>Debugging issues, improving performance, and optimizing existing codebases.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Website Deployment</h3>
+                    <p>Deploying applications to Linux servers, Docker containers, and cloud platforms like AWS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">My DevOps Journey</h2>
+            <div class="blog-container fade-in">
+                <div class="blog-post">
+                    <h3>My DevOps Learning Journey: Tools, Cloud, Programming & Databases</h3>
+                    <h4>Introduction</h4>
+                    <p>As a Computer Science student, I am actively building my skills in DevOps, cloud computing, web development, and programming. This blog shares my learning journey, the tools I use, and the technologies I am most interested in. My goal is to become a Full-Stack Developer first and then grow into a DevOps Engineer.</p>
+                    
+                    <h4>DevOps Tools: Docker & Git/GitHub</h4>
+                    <p><strong>Docker</strong> is one of the most important DevOps tools I am learning. It helps package applications with all their dependencies into containers, making them easy to run on any system.</p>
+                    <p>Why Docker is important:</p>
+                    <ul>
+                        <li>Consistent environment across development and production</li>
+                        <li>Faster deployment</li>
+                        <li>Easy scalability</li>
+                        <li>Works perfectly with CI/CD pipelines</li>
+                    </ul>
+                    <p>I use Docker to containerize Node.js applications and understand how services communicate using containers.</p>
+                    
+                    <h4>Git & GitHub</h4>
+                    <p>Git and GitHub are essential for version control and team collaboration.</p>
+                    <p>What I practice with Git/GitHub:</p>
+                    <ul>
+                        <li>Repository management</li>
+                        <li>Branching and merging</li>
+                        <li>Pull requests</li>
+                        <li>Issue tracking</li>
+                        <li>Open-source collaboration</li>
+                    </ul>
+                    <p>GitHub also helps me showcase my projects publicly and track my learning progress.</p>
+                    
+                    <h4>Cloud Computing: AWS & Terraform (Basics)</h4>
+                    <p><strong>Amazon Web Services (AWS)</strong> - I am learning the fundamentals of cloud computing using AWS, focusing on the core services: EC2 (virtual servers), S3 (object storage), IAM (access management), and VPC (networking).</p>
+                    <p><strong>Terraform (Basic)</strong> - I am learning the basics to define cloud resources using code, create repeatable infrastructure, and reduce manual cloud setup.</p>
+                    
+                    <h4>Operating System: Linux (Ubuntu)</h4>
+                    <p>Linux is the backbone of DevOps. I mainly use Ubuntu Linux for:</p>
+                    <ul>
+                        <li>File and directory management</li>
+                        <li>User and permission control</li>
+                        <li>Package installation</li>
+                        <li>Basic shell scripting</li>
+                        <li>Running servers and services</li>
+                    </ul>
+                    
+                    <h4>Programming Languages</h4>
+                    <p><strong>Object-Oriented Programming</strong> - Java (OOP1) and C# (OOP2) gave me a strong foundation in object-oriented concepts.</p>
+                    <p><strong>JavaScript (My Main Interest ❤️)</strong> - I am highly interested in JavaScript, especially for full-stack development with Node.js (backend) and React.js (frontend).</p>
+                    
+                    <h4>Databases</h4>
+                    <p><strong>MySQL</strong> - A relational database I use for structured data with proper tables, relationships, and SQL queries.</p>
+                    <p><strong>MongoDB</strong> - A NoSQL database I'm learning for flexible, document-based data storage.</p>
+                    
+                    <p class="conclusion">This learning journey is helping me build a strong foundation in DevOps, cloud computing, programming, and databases. I believe continuous practice, real-world projects, and curiosity are the keys to becoming a successful DevOps Engineer. I am constantly learning, experimenting, and improving my skills—and this blog is a reflection of that journey 🚀</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-container fade-in">
+                <div class="education-item">
+                    <h3>American International University-Bangladesh</h3>
+                    <p><strong>Bachelor of Science in Computer Science & Engineering</strong></p>
+                    <p>Expected Graduation: 2025</p>
+                    <p>Focus: Software Engineering, Web Development, Cloud Computing, DevOps</p>
+                </div>
+                <div class="education-item">
+                    <h3>Relevant Coursework</h3>
+                    <p>Object-Oriented Programming (Java & C#), Data Structures, Algorithms, Database Systems, Software Engineering, Web Technologies, Cloud Computing</p>
+                </div>
+                <div class="download-resume">
+                    <a href="#" class="btn" id="downloadResume"><i class="fas fa-download"></i> Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>alaminssb72@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <p>www.linkedin.com/in/al-amin-805407398</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <p>Coming soon - Check back for updates!</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:alaminssb72@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/al-amin-805407398" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Alamin</h3>
+                    <p>Computer Science Student | Aspiring Full-Stack & DevOps Engineer</p>
+                    <p>Passionate about building scalable web applications and automating infrastructure.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Technologies</h3>
+                    <ul class="footer-links">
+                        <li>JavaScript & Node.js</li>
+                        <li>Docker & DevOps</li>
+                        <li>AWS Cloud</li>
+                        <li>Linux & Git</li>
+                        <li>Java & C#</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Alamin. All rights reserved. | Designed with ❤️</p>
+                <p id="currentYear"></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <script>
+        // Calculate age based on birthdate
+        function calculateAge(birthDate) {
+            const today = new Date();
+            const birth = new Date(birthDate);
+            let age = today.getFullYear() - birth.getFullYear();
+            const monthDiff = today.getMonth() - birth.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+                age--;
+            }
+            
+            // Calculate months if age is less than 1
+            if (age < 1) {
+                const months = today.getMonth() - birth.getMonth() + (12 * (today.getFullYear() - birth.getFullYear()));
+                return `${months} month${months !== 1 ? 's' : ''} old`;
+            }
+            
+            return `${age} year${age !== 1 ? 's' : ''} old`;
+        }
+
+        // Update age display
+        function updateAgeDisplay() {
+            const birthDate = '2004-07-28'; // Your birthdate in YYYY-MM-DD format
+            const age = calculateAge(birthDate);
+            const ageDisplay = document.getElementById('ageDisplay');
+            ageDisplay.textContent = `  Internships | Freelance | Remote Work`;
+        }
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        function setupSmoothScrolling() {
+            document.querySelectorAll('nav a, .hero-buttons a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId.startsWith('#')) {
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        }
+
+        // Header scroll effect
+        function setupHeaderScroll() {
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Dark mode toggle
+        function setupDarkModeToggle() {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const icon = darkModeToggle.querySelector('i');
+            
+            darkModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                
+                if (document.body.classList.contains('dark-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    
+                    // Update CSS variables for dark mode
+                    document.documentElement.style.setProperty('--primary-color', '#60a5fa');
+                    document.documentElement.style.setProperty('--secondary-color', '#3b82f6');
+                    document.documentElement.style.setProperty('--accent-color', '#93c5fd');
+                    document.documentElement.style.setProperty('--text-color', '#f9fafb');
+                    document.documentElement.style.setProperty('--light-text', '#d1d5db');
+                    document.documentElement.style.setProperty('--bg-color', '#111827');
+                    document.documentElement.style.setProperty('--section-bg', '#1f2937');
+                    document.documentElement.style.setProperty('--card-bg', '#374151');
+                    document.documentElement.style.setProperty('--shadow', '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2)');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    
+                    // Reset to light mode variables
+                    document.documentElement.style.setProperty('--primary-color', '#2563eb');
+                    document.documentElement.style.setProperty('--secondary-color', '#1e40af');
+                    document.documentElement.style.setProperty('--accent-color', '#3b82f6');
+                    document.documentElement.style.setProperty('--text-color', '#1f2937');
+                    document.documentElement.style.setProperty('--light-text', '#6b7280');
+                    document.documentElement.style.setProperty('--bg-color', '#ffffff');
+                    document.documentElement.style.setProperty('--section-bg', '#f8fafc');
+                    document.documentElement.style.setProperty('--card-bg', '#ffffff');
+                    document.documentElement.style.setProperty('--shadow', '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)');
+                }
+            });
+        }
+
+        // Update current year in footer
+        function updateCurrentYear() {
+            document.getElementById('currentYear').textContent = `Current year: ${new Date().getFullYear()}`;
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            updateAgeDisplay();
+            setupMobileMenu();
+            setupSmoothScrolling();
+            setupHeaderScroll();
+            setupDarkModeToggle();
+            updateCurrentYear();
+            
+            // Initial scroll animation check
+            handleScrollAnimations();
+            
+            // Update GitHub link (placeholder)
+            document.getElementById('githubLink').addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('GitHub profile will be available soon!');
+            });
+            
+            // Download resume button
+            document.getElementById('downloadResume').addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Resume download will be available soon!');
+            });
+        });
+
+        // Check scroll animations on scroll
+        window.addEventListener('scroll', handleScrollAnimations);
+    </script>
+</body>
+</html>
